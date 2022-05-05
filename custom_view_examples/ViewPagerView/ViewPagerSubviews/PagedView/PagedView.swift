@@ -14,9 +14,13 @@ protocol PagedViewDelegate: AnyObject {
 class PagedView: UIView {
     
     // MARK: - Initialization
-    init() {
+    // 1
+    init(pages: [UIView] = []) {
+        
+        self.pages = pages
         super.init(frame: .zero)
-        setupUI()
+        
+        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -25,6 +29,13 @@ class PagedView: UIView {
     
     // MARK: - Properties
     public weak var delegate: PagedViewDelegate?
+    
+    // 2
+    public var pages: [UIView] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
     private lazy var collectionView: UICollectionView = {
         // 1
@@ -37,7 +48,9 @@ class PagedView: UIView {
         // 2
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
+        
         // 3
+        collectionView.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: "PageCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         // 4
@@ -65,16 +78,31 @@ class PagedView: UIView {
                 .constraint(equalTo: self.centerYAnchor)
         ])
     }
+    
+    public func moveToPage(at index: Int) {
+        self.collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let page = Int(self.collectionView.contentOffset.x / self.collectionView.frame.size.width)
+        
+        self.delegate?.didMoveToPage(index: page)
+    }
 }
 
 extension PagedView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     // MARK: - Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 1
+        return pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 2
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PageCollectionViewCell", for: indexPath) as! PageCollectionViewCell
+        let page = self.pages[indexPath.item]
+        cell.view = page
+        return cell
     }
     
     // MARK: - Layout Delegate
