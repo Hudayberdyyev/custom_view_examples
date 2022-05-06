@@ -14,6 +14,19 @@
 		8279063128253CFB000BA6AA /* MainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279063028253CFB000BA6AA /* MainInfoView.swift */; };
 		827906352825447B000BA6AA /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827906342825447B000BA6AA /* UIViewController+Preview.swift */; };
 		827906382825448B000BA6AA /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827906372825448B000BA6AA /* UIView+Preview.swift */; };
+		8279063B28254841000BA6AA /* MovieTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279063A28254841000BA6AA /* MovieTypeLabel.swift */; };
+		8279064128254D96000BA6AA /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8279063E28254D96000BA6AA /* Roboto-Light.ttf */; };
+		8279064228254D96000BA6AA /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8279063F28254D96000BA6AA /* Roboto-Thin.ttf */; };
+		8279064328254D97000BA6AA /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8279064028254D96000BA6AA /* Roboto-Medium.ttf */; };
+		8279064628254EB1000BA6AA /* MovieTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279064528254EB1000BA6AA /* MovieTitleLabel.swift */; };
+		82790649282551FD000BA6AA /* MovieYearLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790648282551FD000BA6AA /* MovieYearLabel.swift */; };
+		8279064C28255254000BA6AA /* MovieAgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279064B28255254000BA6AA /* MovieAgeLabel.swift */; };
+		8279064F282552D6000BA6AA /* MovieQualityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279064E282552D6000BA6AA /* MovieQualityLabel.swift */; };
+		82790652282553B0000BA6AA /* KPRatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790651282553B0000BA6AA /* KPRatingLabel.swift */; };
+		8279065528255702000BA6AA /* KPRatingGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279065428255702000BA6AA /* KPRatingGradientView.swift */; };
+		8279065C28256DE1000BA6AA /* KPRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279065B28256DE1000BA6AA /* KPRatingView.swift */; };
+		8279065F2825704A000BA6AA /* ImdbRatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279065E2825704A000BA6AA /* ImdbRatingLabel.swift */; };
+		8279066228257121000BA6AA /* MovieDurationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279066128257121000BA6AA /* MovieDurationLabel.swift */; };
 		82A378CB2823E0FD00ADB687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CA2823E0FD00ADB687 /* AppDelegate.swift */; };
 		82A378CD2823E0FD00ADB687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CC2823E0FD00ADB687 /* SceneDelegate.swift */; };
 		82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CE2823E0FD00ADB687 /* ViewController.swift */; };
@@ -30,6 +43,19 @@
 		8279063028253CFB000BA6AA /* MainInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoView.swift; sourceTree = "<group>"; };
 		827906342825447B000BA6AA /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		827906372825448B000BA6AA /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
+		8279063A28254841000BA6AA /* MovieTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTypeLabel.swift; sourceTree = "<group>"; };
+		8279063E28254D96000BA6AA /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		8279063F28254D96000BA6AA /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		8279064028254D96000BA6AA /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		8279064528254EB1000BA6AA /* MovieTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTitleLabel.swift; sourceTree = "<group>"; };
+		82790648282551FD000BA6AA /* MovieYearLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieYearLabel.swift; sourceTree = "<group>"; };
+		8279064B28255254000BA6AA /* MovieAgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAgeLabel.swift; sourceTree = "<group>"; };
+		8279064E282552D6000BA6AA /* MovieQualityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQualityLabel.swift; sourceTree = "<group>"; };
+		82790651282553B0000BA6AA /* KPRatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPRatingLabel.swift; sourceTree = "<group>"; };
+		8279065428255702000BA6AA /* KPRatingGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPRatingGradientView.swift; sourceTree = "<group>"; };
+		8279065B28256DE1000BA6AA /* KPRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPRatingView.swift; sourceTree = "<group>"; };
+		8279065E2825704A000BA6AA /* ImdbRatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbRatingLabel.swift; sourceTree = "<group>"; };
+		8279066128257121000BA6AA /* MovieDurationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDurationLabel.swift; sourceTree = "<group>"; };
 		82A378C72823E0FD00ADB687 /* custom_view_examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = custom_view_examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A378CA2823E0FD00ADB687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82A378CC2823E0FD00ADB687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +108,14 @@
 		8279062D28253B55000BA6AA /* BasicInfoViewSubviews */ = {
 			isa = PBXGroup;
 			children = (
+				8279065828256CBD000BA6AA /* KPRatingView */,
+				8279063A28254841000BA6AA /* MovieTypeLabel.swift */,
+				8279064528254EB1000BA6AA /* MovieTitleLabel.swift */,
+				82790648282551FD000BA6AA /* MovieYearLabel.swift */,
+				8279064B28255254000BA6AA /* MovieAgeLabel.swift */,
+				8279064E282552D6000BA6AA /* MovieQualityLabel.swift */,
+				8279065E2825704A000BA6AA /* ImdbRatingLabel.swift */,
+				8279066128257121000BA6AA /* MovieDurationLabel.swift */,
 			);
 			path = BasicInfoViewSubviews;
 			sourceTree = "<group>";
@@ -93,6 +127,34 @@
 				8279063028253CFB000BA6AA /* MainInfoView.swift */,
 			);
 			path = MainInfoView;
+			sourceTree = "<group>";
+		};
+		8279063D28254D80000BA6AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8279063E28254D96000BA6AA /* Roboto-Light.ttf */,
+				8279064028254D96000BA6AA /* Roboto-Medium.ttf */,
+				8279063F28254D96000BA6AA /* Roboto-Thin.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8279065828256CBD000BA6AA /* KPRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				8279065928256CCA000BA6AA /* KPRatingSubviews */,
+				8279065B28256DE1000BA6AA /* KPRatingView.swift */,
+			);
+			path = KPRatingView;
+			sourceTree = "<group>";
+		};
+		8279065928256CCA000BA6AA /* KPRatingSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				82790651282553B0000BA6AA /* KPRatingLabel.swift */,
+				8279065428255702000BA6AA /* KPRatingGradientView.swift */,
+			);
+			path = KPRatingSubviews;
 			sourceTree = "<group>";
 		};
 		82A378BE2823E0FD00ADB687 = {
@@ -116,6 +178,7 @@
 		82A378C92823E0FD00ADB687 /* custom_view_examples */ = {
 			isa = PBXGroup;
 			children = (
+				8279063D28254D80000BA6AA /* Resources */,
 				8279062F28253CE3000BA6AA /* MainInfoView */,
 				8279062428251377000BA6AA /* Extensions */,
 				8279061F28251333000BA6AA /* Constants */,
@@ -205,8 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8279064328254D97000BA6AA /* Roboto-Medium.ttf in Resources */,
+				8279064228254D96000BA6AA /* Roboto-Thin.ttf in Resources */,
 				82A378D72823E0FF00ADB687 /* LaunchScreen.storyboard in Resources */,
 				82A378D42823E0FF00ADB687 /* Assets.xcassets in Resources */,
+				8279064128254D96000BA6AA /* Roboto-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +326,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				827906262825139F000BA6AA /* Extensions.swift in Sources */,
+				8279064C28255254000BA6AA /* MovieAgeLabel.swift in Sources */,
+				8279065C28256DE1000BA6AA /* KPRatingView.swift in Sources */,
 				82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */,
 				827906382825448B000BA6AA /* UIView+Preview.swift in Sources */,
+				8279065F2825704A000BA6AA /* ImdbRatingLabel.swift in Sources */,
 				82A378CB2823E0FD00ADB687 /* AppDelegate.swift in Sources */,
+				8279066228257121000BA6AA /* MovieDurationLabel.swift in Sources */,
 				827906352825447B000BA6AA /* UIViewController+Preview.swift in Sources */,
+				8279063B28254841000BA6AA /* MovieTypeLabel.swift in Sources */,
 				82A378CD2823E0FD00ADB687 /* SceneDelegate.swift in Sources */,
+				8279065528255702000BA6AA /* KPRatingGradientView.swift in Sources */,
 				827906212825135E000BA6AA /* Constants.swift in Sources */,
+				8279064F282552D6000BA6AA /* MovieQualityLabel.swift in Sources */,
+				82790649282551FD000BA6AA /* MovieYearLabel.swift in Sources */,
 				8279063128253CFB000BA6AA /* MainInfoView.swift in Sources */,
+				8279064628254EB1000BA6AA /* MovieTitleLabel.swift in Sources */,
 				8279062B282537B8000BA6AA /* BasicInfoView.swift in Sources */,
+				82790652282553B0000BA6AA /* KPRatingLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

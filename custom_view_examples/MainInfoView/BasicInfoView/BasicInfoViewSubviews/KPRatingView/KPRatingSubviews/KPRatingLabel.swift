@@ -1,5 +1,5 @@
 //
-//  BasicInfoView.swift
+//  KPRatingLabel.swift
 //  custom_view_examples
 //
 //  Created by Ahmet Hudayberdyyev on 5/6/22.
@@ -7,34 +7,24 @@
 
 import UIKit
 
-enum MovieType: String {
-    case Serial
-    case Film
+class KPRatingLabel: UILabel {
     
-    func getLocalizedMovieType() -> String {
-        return self.rawValue
-    }
-}
-
-class BasicInfoView: UIView {
-    
-    //MARK: -Properties
-    private var movieType: MovieType?
-    
-    //MARK: -UIControls
-    private let movieTypeLabel = UILabel()
-    
+    //MARK: -Initializers
     private func initialize() {
-        print("BasicInfoView => \(#function)")
+        print("KPRatingLabel => \(#function)")
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemRed
-        movieType = .Film
+        backgroundColor = .clear
+        font = UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont)
+        textColor = .white
+        textAlignment = .center
+        text = "7.4"
     }
     
     init() {
         super.init(frame: .zero)
-        print("BasicInfoView => \(#function)")
+        print("KPRatingLabel => \(#function)")
         initialize()
+        setupUI()
     }
     
     @available (*, unavailable)
@@ -47,9 +37,10 @@ class BasicInfoView: UIView {
         super.init(coder: coder)
     }
     
+    //MARK: -Layer methods
+    
     private func setupUI() {
-        print("BasicInfoView => \(#function)")
-        
+        print("KPRatingLabel => \(#function)")
     }
 }
 
@@ -57,11 +48,11 @@ class BasicInfoView: UIView {
 import SwiftUI
 
 @available(iOS 13, *)
-struct BasicInfoViewPreview: PreviewProvider {
+struct KPRatingLabelPreview: PreviewProvider {
     
     static var previews: some View {
         // view controller using programmatic UI
-        BasicInfoView().toPreview()
+        KPRatingLabel().toPreview()
     }
 }
 #endif

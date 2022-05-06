@@ -13,3 +13,11 @@ struct Constants {
         static let baseInfoFont: CGFloat = CGFloat(0.017.screenMaxDimensionRelativeValue)
     }
 }
+
+struct K {
+    struct Fonts {
+        static let robotoLight = "Roboto-Light"
+        static let robotoMedium = "Roboto-Medium"
+        static let robotoThin = "Roboto-Thin"
+    }
+}
