@@ -50,6 +50,7 @@ class AppTabItemView: UIView, TabItemProtocol {
                 borderView.rightAnchor.constraint(equalTo: self.rightAnchor),
                 borderView.heightAnchor.constraint(equalToConstant: 5),
                 borderView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+//                borderView.topAnchor.constraint(equalTo: self.topAnchor)
             ])
         }
     }
