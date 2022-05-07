@@ -62,9 +62,6 @@ class KPRatingGradientView: UIView {
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
         layer.insertSublayer(gradientLayer, above: self.layer)
-        
-        clipsToBounds = true
-        layer.cornerRadius = 7
     }
 }
 

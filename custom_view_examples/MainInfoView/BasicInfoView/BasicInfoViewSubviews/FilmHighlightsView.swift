@@ -47,14 +47,26 @@ class FilmHighlightsView: UIView {
     private func setupUI() {
         print("FilmHighlightsView => \(#function)")
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        /// Add arranged subviews
         stackView.addArrangedSubview(movieYearLabel)
         stackView.addArrangedSubview(movieAgeLabel)
         stackView.addArrangedSubview(movieQualityLabel)
         stackView.addArrangedSubview(movieKPRatingLabel)
         stackView.addArrangedSubview(movieImdbRatingLabel)
         stackView.addArrangedSubview(movieDurationLabel)
-        addSubview(stackView)
         stackView.spacing = 10
+        
+        /// Set corner radius for each view
+        stackView.arrangedSubviews.forEach({
+            $0.clipsToBounds = true
+            $0.layer.cornerRadius = 5
+        })
+        
+        /// Add stack view
+        addSubview(stackView)
+        
+        /// Set constraints
         stackView.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
