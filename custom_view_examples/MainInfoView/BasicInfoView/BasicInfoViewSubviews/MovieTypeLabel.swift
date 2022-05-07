@@ -15,7 +15,7 @@ class MovieTypeLabel: UILabel {
         backgroundColor = .black
         font = UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont)
         textColor = .white
-        textAlignment = .center
+        textAlignment = .left
         text = "Serial"
     }
     

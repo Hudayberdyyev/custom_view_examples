@@ -12,7 +12,12 @@ class BasicInfoView: UIView {
     //MARK: -Properties
     
     //MARK: -UIControls
+    private let stackView = UIStackView()
+    private let movieTitleLabel = MovieTitleLabel()
+    private let movieTypeLabel = MovieTypeLabel()
+    private let filmHighlightsView = FilmHighlightsView()
     
+    //MARK: -Initializers
     private func initialize() {
         print("BasicInfoView => \(#function)")
         translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +43,24 @@ class BasicInfoView: UIView {
     
     private func setupUI() {
         print("BasicInfoView => \(#function)")
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
+        /// Add arranged subviews
+        stackView.spacing = 5
+        stackView.axis = .vertical
+        
+        /// Set some rules for each view
+        stackView.addArrangedSubview(movieTypeLabel)
+        stackView.addArrangedSubview(movieTitleLabel)
+        stackView.addArrangedSubview(filmHighlightsView)
+        
+        /// Add stack view
+        addSubview(stackView)
+        
+        /// Set constraints
+        stackView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
     }
 }
 

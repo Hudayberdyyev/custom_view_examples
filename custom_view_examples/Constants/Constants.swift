@@ -9,7 +9,7 @@ import UIKit
 
 struct Constants {
     struct basicMovieInfoView {
-        static let titleFont: CGFloat = CGFloat(0.022.screenMaxDimensionRelativeValue)
+        static let titleFont: CGFloat = CGFloat(0.035.screenMaxDimensionRelativeValue)
         static let baseInfoFont: CGFloat = CGFloat(0.020.screenMaxDimensionRelativeValue)
         static let filmHighlightsHorizontalEdgeInsets: CGFloat = 5
         static let filmHighlightsVerticalEdgeInsets: CGFloat = 3

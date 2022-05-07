@@ -15,7 +15,7 @@ class MovieTitleLabel: UILabel {
         backgroundColor = .black
         font = UIFont(name: K.Fonts.robotoMedium, size: Constants.basicMovieInfoView.titleFont)
         textColor = .white
-        textAlignment = .center
+        textAlignment = .left
         text = "The Imitation Game"
     }
     

@@ -56,6 +56,7 @@ class FilmHighlightsView: UIView {
         stackView.addArrangedSubview(movieImdbRatingLabel)
         stackView.addArrangedSubview(movieDurationLabel)
         stackView.spacing = 10
+        stackView.axis = .horizontal
         
         /// Set corner radius for each view
         stackView.arrangedSubviews.forEach({
