@@ -7,34 +7,23 @@
 
 import UIKit
 
-enum MovieType: String {
-    case Serial
-    case Film
-    
-    func getLocalizedMovieType() -> String {
-        return self.rawValue
-    }
-}
-
 class BasicInfoView: UIView {
     
     //MARK: -Properties
-    private var movieType: MovieType?
     
     //MARK: -UIControls
-    private let movieTypeLabel = UILabel()
     
     private func initialize() {
         print("BasicInfoView => \(#function)")
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .systemRed
-        movieType = .Film
     }
     
     init() {
         super.init(frame: .zero)
         print("BasicInfoView => \(#function)")
         initialize()
+        setupUI()
     }
     
     @available (*, unavailable)

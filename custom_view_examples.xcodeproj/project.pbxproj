@@ -27,6 +27,8 @@
 		8279065C28256DE1000BA6AA /* KPRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279065B28256DE1000BA6AA /* KPRatingView.swift */; };
 		8279065F2825704A000BA6AA /* ImdbRatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279065E2825704A000BA6AA /* ImdbRatingLabel.swift */; };
 		8279066228257121000BA6AA /* MovieDurationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279066128257121000BA6AA /* MovieDurationLabel.swift */; };
+		82790665282573B5000BA6AA /* MovieHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790664282573B5000BA6AA /* MovieHighlightsView.swift */; };
+		82790668282573E3000BA6AA /* FilmHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790667282573E3000BA6AA /* FilmHighlightsView.swift */; };
 		82A378CB2823E0FD00ADB687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CA2823E0FD00ADB687 /* AppDelegate.swift */; };
 		82A378CD2823E0FD00ADB687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CC2823E0FD00ADB687 /* SceneDelegate.swift */; };
 		82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CE2823E0FD00ADB687 /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 		8279065B28256DE1000BA6AA /* KPRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPRatingView.swift; sourceTree = "<group>"; };
 		8279065E2825704A000BA6AA /* ImdbRatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImdbRatingLabel.swift; sourceTree = "<group>"; };
 		8279066128257121000BA6AA /* MovieDurationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDurationLabel.swift; sourceTree = "<group>"; };
+		82790664282573B5000BA6AA /* MovieHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHighlightsView.swift; sourceTree = "<group>"; };
+		82790667282573E3000BA6AA /* FilmHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmHighlightsView.swift; sourceTree = "<group>"; };
 		82A378C72823E0FD00ADB687 /* custom_view_examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = custom_view_examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A378CA2823E0FD00ADB687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82A378CC2823E0FD00ADB687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				8279064E282552D6000BA6AA /* MovieQualityLabel.swift */,
 				8279065E2825704A000BA6AA /* ImdbRatingLabel.swift */,
 				8279066128257121000BA6AA /* MovieDurationLabel.swift */,
+				82790664282573B5000BA6AA /* MovieHighlightsView.swift */,
+				82790667282573E3000BA6AA /* FilmHighlightsView.swift */,
 			);
 			path = BasicInfoViewSubviews;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 				827906262825139F000BA6AA /* Extensions.swift in Sources */,
 				8279064C28255254000BA6AA /* MovieAgeLabel.swift in Sources */,
 				8279065C28256DE1000BA6AA /* KPRatingView.swift in Sources */,
+				82790668282573E3000BA6AA /* FilmHighlightsView.swift in Sources */,
 				82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */,
 				827906382825448B000BA6AA /* UIView+Preview.swift in Sources */,
 				8279065F2825704A000BA6AA /* ImdbRatingLabel.swift in Sources */,
@@ -339,6 +346,7 @@
 				8279065528255702000BA6AA /* KPRatingGradientView.swift in Sources */,
 				827906212825135E000BA6AA /* Constants.swift in Sources */,
 				8279064F282552D6000BA6AA /* MovieQualityLabel.swift in Sources */,
+				82790665282573B5000BA6AA /* MovieHighlightsView.swift in Sources */,
 				82790649282551FD000BA6AA /* MovieYearLabel.swift in Sources */,
 				8279063128253CFB000BA6AA /* MainInfoView.swift in Sources */,
 				8279064628254EB1000BA6AA /* MovieTitleLabel.swift in Sources */,
