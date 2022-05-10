@@ -20,9 +20,9 @@ class ViewController: UIViewController {
 
     private func setupUI() {
         print("ViewController => \(#function)")
-        let mainView = KPRatingView()
-        view.addSubview(mainView)
-        mainView.snp.makeConstraints { (make) in
+        let customView = DescriptionView()
+        view.addSubview(customView)
+        customView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
         }
         
