@@ -29,6 +29,7 @@ struct ColorPalette {
         static let Light = #colorLiteral(red: 0.1432349086, green: 0.5036785603, blue: 0.910633266, alpha: 1)
         static let Medium = #colorLiteral(red: 0.1067495719, green: 0.3233799934, blue: 0.5766439438, alpha: 1)
         static let Dark = #colorLiteral(red: 0, green: 0.09160999209, blue: 0.2834234536, alpha: 1)
+        static let moreLessButton = #colorLiteral(red: 0.09921535105, green: 0.3813635111, blue: 0.6720074415, alpha: 1)
     }
     
     static let White = UIColor.white

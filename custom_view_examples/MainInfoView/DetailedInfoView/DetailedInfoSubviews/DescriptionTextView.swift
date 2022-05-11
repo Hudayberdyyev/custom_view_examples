@@ -14,6 +14,15 @@ class DescriptionTextView: UITextView {
     private var isExpanded: Bool = false
     private var heightConstraint: NSLayoutConstraint?
     
+    private let mutableParagraphStyle: NSMutableParagraphStyle = {
+        let ps = NSMutableParagraphStyle()
+        ps.lineSpacing = 4
+        ps.lineBreakMode = .byWordWrapping
+//        ps.alignment = .justified
+        ps.alignment = .left
+        return ps
+    }()
+    
     private var collapsedText: String = """
     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one
     """
@@ -103,9 +112,9 @@ class DescriptionTextView: UITextView {
         let suffix = isExpanded ? readLess : readMore
         let suffixAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
-            .foregroundColor: ColorPalette.Blue.Light,
+            .foregroundColor: ColorPalette.Blue.moreLessButton,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .underlineColor: ColorPalette.Blue.Light
+            .underlineColor: ColorPalette.Blue.moreLessButton
         ]
         let attributedSuffix = NSAttributedString(string: suffix, attributes: suffixAttributes)
         
@@ -120,6 +129,9 @@ class DescriptionTextView: UITextView {
         /// Resulted string
         result.append(attributedPrefix)
         result.append(attributedSuffix)
+        
+        /// Add paragraph style attribute
+        result.addAttribute(.paragraphStyle, value: mutableParagraphStyle, range: NSRange(location: 0, length: result.length))
         
         return result
     }
