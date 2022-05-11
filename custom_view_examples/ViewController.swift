@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
+    
+    private var customView = DescriptionTextView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +22,24 @@ class ViewController: UIViewController {
 
     private func setupUI() {
         print("ViewController => \(#function)")
-        let customView = DescriptionView()
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
-            make.edges.equalTo(view)
+//            make.edges.equalTo(view)
+            make.trailing.leading.top.equalTo(view)
         }
         
+        customView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textViewTapped(_:))))
+    }
+    
+    @objc
+    private func textViewTapped(_ sender: UITextView? ) {
+        print("ViewController => \(#function)")
+        customView.changeState()
+        
+        /// Fold/Collapse animation
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
