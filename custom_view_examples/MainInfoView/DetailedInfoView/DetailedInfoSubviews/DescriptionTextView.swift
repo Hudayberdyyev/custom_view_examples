@@ -105,8 +105,8 @@ class DescriptionTextView: UITextView {
             .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
             .foregroundColor: ColorPalette.Blue.moreLessButton,
 //            .backgroundColor: ColorPalette.Blue.moreLessButtonBackground.withAlphaComponent(0.05),
-            .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .underlineColor: ColorPalette.Blue.moreLessButton
+//            .underlineStyle: NSUnderlineStyle.single.rawValue,
+//            .underlineColor: ColorPalette.Blue.moreLessButton
         ]
         let attributedSuffix = NSAttributedString(string: suffix, attributes: suffixAttributes)
         
