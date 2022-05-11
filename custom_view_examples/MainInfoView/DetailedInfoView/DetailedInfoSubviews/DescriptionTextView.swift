@@ -4,7 +4,6 @@
 //
 //  Created by Ahmet Hudayberdyyev on 5/11/22.
 //
-
 import UIKit
 import SnapKit
 
@@ -13,6 +12,7 @@ class DescriptionTextView: UITextView {
     //MARK: -Properties
     private var isExpanded: Bool = false
     private var heightConstraint: NSLayoutConstraint?
+    private let characterLimitForCollapsedText: Int = 255
     
     private let mutableParagraphStyle: NSMutableParagraphStyle = {
         let ps = NSMutableParagraphStyle()
@@ -24,7 +24,7 @@ class DescriptionTextView: UITextView {
     }()
     
     private var collapsedText: String = """
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one
+    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one ...
     """
     private var expandedText: String = """
     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
@@ -56,7 +56,6 @@ class DescriptionTextView: UITextView {
         super.init(frame: .zero, textContainer: nil)
         print("DescriptionTextView => \(#function)")
         initialize()
-        setupUI()
         reCalcEstimatedSize()
     }
     
@@ -71,18 +70,10 @@ class DescriptionTextView: UITextView {
     }
     
     //MARK: -View methods
-    private func setupUI() {
+    private func updateUI() {
         print("DescriptionTextView => \(#function)")
-    }
-    
-    public func changeState() {
-        print("DescriptionTextView => \(#function)")
-        
         /// Change text of text view
-        let regularText = isExpanded ? collapsedText : expandedText
-        
-        /// Inverse isExpanded property
-        isExpanded = !isExpanded
+        let regularText = isExpanded ? expandedText : collapsedText
         
         attributedText = getAttributedText(for: regularText)
         
@@ -105,14 +96,15 @@ class DescriptionTextView: UITextView {
         let result = NSMutableAttributedString()
         
         /// More and less constants
-        let readMore = " more ..."
-        let readLess = " ... less"
+        let readMore = " more"
+        let readLess = " less"
         
         /// Suffix of string
         let suffix = isExpanded ? readLess : readMore
         let suffixAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
             .foregroundColor: ColorPalette.Blue.moreLessButton,
+            .backgroundColor: ColorPalette.Blue.moreLessButtonBackground.withAlphaComponent(0.05),
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .underlineColor: ColorPalette.Blue.moreLessButton
         ]
@@ -134,6 +126,33 @@ class DescriptionTextView: UITextView {
         result.addAttribute(.paragraphStyle, value: mutableParagraphStyle, range: NSRange(location: 0, length: result.length))
         
         return result
+    }
+}
+
+//MARK: -Public methods
+extension DescriptionTextView {
+    public func changeState() {
+        print("DescriptionTextView => \(#function)")
+        
+        /// Inverse isExpanded property
+        isExpanded = !isExpanded
+        
+        /// Update ui
+        updateUI()
+    }
+    
+    public func resetText(with text: String) {
+        print("DescriptionTextView => \(#function)")
+        
+        /// Set collapsed text
+        collapsedText = String(text.prefix(characterLimitForCollapsedText))
+        collapsedText.append(" ...")
+        
+        /// Set expanded text
+        expandedText = text
+        
+        /// Update ui
+        updateUI()
     }
 }
 
