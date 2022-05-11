@@ -10,7 +10,6 @@
 		5FC2319D8B1130DAAD03C13F /* Pods_custom_view_examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40171A6111587027ED9EAA2 /* Pods_custom_view_examples.framework */; };
 		8257775E282BD9AE001695B6 /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257775D282BD9AD001695B6 /* DescriptionTextView.swift */; };
 		82649FBB2826A9F400600880 /* DetailedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82649FBA2826A9F400600880 /* DetailedInfoView.swift */; };
-		82649FC02826AE5D00600880 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82649FBF2826AE5D00600880 /* DescriptionView.swift */; };
 		827906212825135E000BA6AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827906202825135E000BA6AA /* Constants.swift */; };
 		827906262825139F000BA6AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827906252825139F000BA6AA /* Extensions.swift */; };
 		8279062B282537B8000BA6AA /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279062A282537B8000BA6AA /* BasicInfoView.swift */; };
@@ -44,7 +43,6 @@
 		700D22BDB2DB0A27B70760F5 /* Pods-custom_view_examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-custom_view_examples.debug.xcconfig"; path = "Target Support Files/Pods-custom_view_examples/Pods-custom_view_examples.debug.xcconfig"; sourceTree = "<group>"; };
 		8257775D282BD9AD001695B6 /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		82649FBA2826A9F400600880 /* DetailedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedInfoView.swift; sourceTree = "<group>"; };
-		82649FBF2826AE5D00600880 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		827906202825135E000BA6AA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		827906252825139F000BA6AA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8279062A282537B8000BA6AA /* BasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoView.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 		82649FBE2826AE4700600880 /* DetailedInfoSubviews */ = {
 			isa = PBXGroup;
 			children = (
-				82649FBF2826AE5D00600880 /* DescriptionView.swift */,
 				8257775D282BD9AD001695B6 /* DescriptionTextView.swift */,
 			);
 			path = DetailedInfoSubviews;
@@ -362,7 +359,6 @@
 				82790668282573E3000BA6AA /* FilmHighlightsView.swift in Sources */,
 				82649FBB2826A9F400600880 /* DetailedInfoView.swift in Sources */,
 				82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */,
-				82649FC02826AE5D00600880 /* DescriptionView.swift in Sources */,
 				827906382825448B000BA6AA /* UIView+Preview.swift in Sources */,
 				8257775E282BD9AE001695B6 /* DescriptionTextView.swift in Sources */,
 				8279065F2825704A000BA6AA /* ImdbRatingLabel.swift in Sources */,

@@ -9,6 +9,9 @@ import UIKit
 
 class DetailedInfoView: UIView {
     
+    private var descriptionTextView = DescriptionTextView()
+    private var defaultDescriptionText = "Патрик Джейн - детектив и независимый консультант из Калифорнийского Бюро Расследований (КБР), он использует свои отточенные, как лезвие, навыки наблюдения для раскрытия тяжких преступлений. В самом Бюро Джейн известен за частые нарушения протокола, а также за его звездное прошлое: он работал медиумом, однако теперь сам признает, что симулировал паранормальные способности..."
+    
     private func initialize() {
         print("DetailedInfoView => \(#function)")
         translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +22,7 @@ class DetailedInfoView: UIView {
         super.init(frame: .zero)
         print("DetailedInfoView => \(#function)")
         initialize()
+        setupUI()
     }
     
     @available (*, unavailable)
@@ -29,6 +33,27 @@ class DetailedInfoView: UIView {
     @available (*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    private func setupUI() {
+        print("DetailedInfoView => \(#function)")
+        addSubview(descriptionTextView)
+        descriptionTextView.snp.makeConstraints { (make) in
+            make.trailing.leading.top.equalTo(self)
+        }
+        descriptionTextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textViewTapped(_:))))
+        descriptionTextView.resetText(with: defaultDescriptionText)
+    }
+    
+    @objc
+    private func textViewTapped(_ sender: UITextView? ) {
+        print("ViewController => \(#function)")
+        descriptionTextView.changeState()
+        
+        /// Fold/Collapse animation
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
     }
 }
 

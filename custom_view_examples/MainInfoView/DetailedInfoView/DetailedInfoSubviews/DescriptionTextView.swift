@@ -96,15 +96,15 @@ class DescriptionTextView: UITextView {
         let result = NSMutableAttributedString()
         
         /// More and less constants
-        let readMore = " more"
-        let readLess = " less"
+        let readMore = "more"
+        let readLess = "less"
         
         /// Suffix of string
         let suffix = isExpanded ? readLess : readMore
         let suffixAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
             .foregroundColor: ColorPalette.Blue.moreLessButton,
-            .backgroundColor: ColorPalette.Blue.moreLessButtonBackground.withAlphaComponent(0.05),
+//            .backgroundColor: ColorPalette.Blue.moreLessButtonBackground.withAlphaComponent(0.05),
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .underlineColor: ColorPalette.Blue.moreLessButton
         ]
@@ -146,10 +146,11 @@ extension DescriptionTextView {
         
         /// Set collapsed text
         collapsedText = String(text.prefix(characterLimitForCollapsedText))
-        collapsedText.append(" ...")
+        collapsedText.append(" ... ")
         
         /// Set expanded text
         expandedText = text
+        expandedText.append(" ")
         
         /// Update ui
         updateUI()
