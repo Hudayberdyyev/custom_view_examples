@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     private func setupUI() {
         print("ViewController => \(#function)")
-        let customView = DetailedInfoView()
+        let customView = MainInfoView()
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)

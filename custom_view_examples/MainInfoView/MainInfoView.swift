@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainInfoView: UIView {
     
+    //MARK: -UIControls
+    private let basicInfoView = BasicInfoView()
+    private let detailedInfoView = DetailedInfoView()
+    
+    //MARK: -Initializers
     private func initialize() {
         print("MainInfoView => \(#function)")
         translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +25,7 @@ class MainInfoView: UIView {
         super.init(frame: .zero)
         print("MainInfoView => \(#function)")
         initialize()
+        setupUI()
     }
     
     @available (*, unavailable)
@@ -29,6 +36,20 @@ class MainInfoView: UIView {
     @available (*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    private func setupUI() {
+        print("MainInfoView => \(#function)")
+        addSubview(basicInfoView)
+        basicInfoView.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalTo(self)
+        }
+        
+        addSubview(detailedInfoView)
+        detailedInfoView.snp.makeConstraints { (make) in
+            make.top.equalTo(basicInfoView.snp.bottom)
+            make.leading.trailing.bottom.equalTo(self)
+        }
     }
 }
 
