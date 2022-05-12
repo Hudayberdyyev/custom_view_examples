@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5FC2319D8B1130DAAD03C13F /* Pods_custom_view_examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40171A6111587027ED9EAA2 /* Pods_custom_view_examples.framework */; };
+		82117F03282CE8F7001DFC2F /* InfoButtonsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82117F02282CE8F7001DFC2F /* InfoButtonsBarView.swift */; };
+		82117F09282CF1EB001DFC2F /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82117F08282CF1EB001DFC2F /* ImageButton.swift */; };
 		8257775E282BD9AE001695B6 /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257775D282BD9AD001695B6 /* DescriptionTextView.swift */; };
 		82577762282BFF79001695B6 /* MovieAdditionalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82577761282BFF79001695B6 /* MovieAdditionalInfoView.swift */; };
 		82577765282C0098001695B6 /* MovieAdditionalInfoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82577764282C0098001695B6 /* MovieAdditionalInfoTextView.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		38B0314699661BBCC4F51A0D /* Pods-custom_view_examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-custom_view_examples.release.xcconfig"; path = "Target Support Files/Pods-custom_view_examples/Pods-custom_view_examples.release.xcconfig"; sourceTree = "<group>"; };
 		700D22BDB2DB0A27B70760F5 /* Pods-custom_view_examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-custom_view_examples.debug.xcconfig"; path = "Target Support Files/Pods-custom_view_examples/Pods-custom_view_examples.debug.xcconfig"; sourceTree = "<group>"; };
+		82117F02282CE8F7001DFC2F /* InfoButtonsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonsBarView.swift; sourceTree = "<group>"; };
+		82117F08282CF1EB001DFC2F /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		8257775D282BD9AD001695B6 /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		82577761282BFF79001695B6 /* MovieAdditionalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAdditionalInfoView.swift; sourceTree = "<group>"; };
 		82577764282C0098001695B6 /* MovieAdditionalInfoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAdditionalInfoTextView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82117F01282CE8CF001DFC2F /* InfoButtonsBarView */ = {
+			isa = PBXGroup;
+			children = (
+				82117F07282CF19F001DFC2F /* InfoButtonsBarSubviews */,
+				82117F02282CE8F7001DFC2F /* InfoButtonsBarView.swift */,
+			);
+			path = InfoButtonsBarView;
+			sourceTree = "<group>";
+		};
+		82117F07282CF19F001DFC2F /* InfoButtonsBarSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				82117F08282CF1EB001DFC2F /* ImageButton.swift */,
+			);
+			path = InfoButtonsBarSubviews;
+			sourceTree = "<group>";
+		};
 		82649FB92826A9CB00600880 /* DetailedInfoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +177,7 @@
 		8279062F28253CE3000BA6AA /* MainInfoView */ = {
 			isa = PBXGroup;
 			children = (
+				82117F01282CE8CF001DFC2F /* InfoButtonsBarView */,
 				82649FB92826A9CB00600880 /* DetailedInfoView */,
 				82790629282537A5000BA6AA /* BasicInfoView */,
 				8279063028253CFB000BA6AA /* MainInfoView.swift */,
@@ -371,6 +393,8 @@
 				8279065F2825704A000BA6AA /* ImdbRatingLabel.swift in Sources */,
 				82A378CB2823E0FD00ADB687 /* AppDelegate.swift in Sources */,
 				8279066228257121000BA6AA /* MovieDurationLabel.swift in Sources */,
+				82117F03282CE8F7001DFC2F /* InfoButtonsBarView.swift in Sources */,
+				82117F09282CF1EB001DFC2F /* ImageButton.swift in Sources */,
 				82577765282C0098001695B6 /* MovieAdditionalInfoTextView.swift in Sources */,
 				827906352825447B000BA6AA /* UIViewController+Preview.swift in Sources */,
 				8279063B28254841000BA6AA /* MovieTypeLabel.swift in Sources */,

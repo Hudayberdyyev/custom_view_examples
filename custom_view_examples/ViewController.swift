@@ -20,7 +20,8 @@ class ViewController: UIViewController {
 
     private func setupUI() {
         print("ViewController => \(#function)")
-        let customView = MainInfoView()
+//        let customView = ImageButton(image: UIImage(named: "play"), imageColor: .black, backgroundColor: .white, titleColor: .black, height: 0.046)
+        let customView = ImageButton(image: UIImage(named: "play"), imageColor: .black, backgroundColor: .white, titleColor: .black, height: 0.046)
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
