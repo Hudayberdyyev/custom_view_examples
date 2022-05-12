@@ -11,9 +11,7 @@ import SnapKit
 class MovieAdditionalInfoTextView: UITextView {
     
     //MARK: -Properties
-    private var isExpanded: Bool = false
     private var heightConstraint: NSLayoutConstraint?
-    private let characterLimitForCollapsedText: Int = 255
     
     private let mutableParagraphStyle: NSMutableParagraphStyle = {
         let ps = NSMutableParagraphStyle()
@@ -24,14 +22,14 @@ class MovieAdditionalInfoTextView: UITextView {
         return ps
     }()
     
-    private var collapsedText: String = """
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one ...
-    """
-    private var expandedText: String = """
-    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-    """
+    private var genre = "Жанр: "
+    private var country = "Страна: "
+    private var lang = "Язык: "
+    private var actor = "Актерский и режиссерский состав: "
+    private var countryList = "США, Мексика\n"
+    private var genreList = "Фантастика, Драма\n"
+    private var langList = "Русский\n"
+    private var actorList = "Джони Депп, Николь Кидман, Марго Робби, Шарлиз Терон\n"
     
     //MARK: -Initializers
     private func initialize() {
@@ -41,7 +39,7 @@ class MovieAdditionalInfoTextView: UITextView {
         textColor = .green
         backgroundColor = .black
 //        text = collapsedText
-        attributedText = getAttributedText(for: collapsedText)
+        attributedText = getAttributedText()
         
         /// Allowed and not allowed actions
         isScrollEnabled = false
@@ -74,9 +72,8 @@ class MovieAdditionalInfoTextView: UITextView {
     private func updateUI() {
         print("MovieAdditionalInfoTextView => \(#function)")
         /// Change text of text view
-        let regularText = isExpanded ? expandedText : collapsedText
         
-        attributedText = getAttributedText(for: regularText)
+        attributedText = getAttributedText()
         
         /// Calculate estimated size
         reCalcEstimatedSize()
@@ -92,36 +89,42 @@ class MovieAdditionalInfoTextView: UITextView {
         self.heightConstraint?.isActive = true
     }
     
-    private func getAttributedText(for regularText: String) -> NSMutableAttributedString {
+    private func getAttributedText() -> NSMutableAttributedString {
         print("MovieAdditionalInfoTextView => \(#function)")
         let result = NSMutableAttributedString()
         
-        /// More and less constants
-        let readMore = "more"
-        let readLess = "less"
-        
-        /// Suffix of string
-        let suffix = isExpanded ? readLess : readMore
-        let suffixAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
-            .foregroundColor: ColorPalette.Blue.moreLessButton,
-//            .backgroundColor: ColorPalette.Blue.moreLessButtonBackground.withAlphaComponent(0.05),
-//            .underlineStyle: NSUnderlineStyle.single.rawValue,
-//            .underlineColor: ColorPalette.Blue.moreLessButton
-        ]
-        let attributedSuffix = NSAttributedString(string: suffix, attributes: suffixAttributes)
-        
-        /// Prefix of string
-        let prefix = regularText
-        let prefixAttiributes: [NSAttributedString.Key: Any] = [
+        let titleAttribute: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
             .foregroundColor: UIColor.white
         ]
-        let attributedPrefix = NSAttributedString(string: prefix, attributes: prefixAttiributes)
         
-        /// Resulted string
-        result.append(attributedPrefix)
-        result.append(attributedSuffix)
+        let listAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: K.Fonts.robotoLight, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
+            .foregroundColor: ColorPalette.Gray.Light
+        ]
+        
+        let actorTitleAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: K.Fonts.robotoMedium, size: Constants.basicMovieInfoView.baseInfoFont) ?? .systemFont(ofSize: Constants.basicMovieInfoView.baseInfoFont),
+            .foregroundColor: UIColor.white
+        ]
+        
+        let attributedGenreTitle = NSAttributedString(string: genre, attributes: titleAttribute)
+        let attributedGenreList = NSAttributedString(string: genreList, attributes: listAttribute)
+        let attributedCountryTitle = NSAttributedString(string: country, attributes: titleAttribute)
+        let attributedCountryList = NSAttributedString(string: countryList, attributes: listAttribute)
+        let attributedActorTitle = NSAttributedString(string: actor, attributes: actorTitleAttribute)
+        let attributedActorList = NSAttributedString(string: actorList, attributes: listAttribute)
+        let attributedLangTitle = NSAttributedString(string: lang, attributes: titleAttribute)
+        let attributedLangList = NSAttributedString(string: langList, attributes: listAttribute)
+        
+        result.append(attributedGenreTitle)
+        result.append(attributedGenreList)
+        result.append(attributedCountryTitle)
+        result.append(attributedCountryList)
+        result.append(attributedLangTitle)
+        result.append(attributedLangList)
+        result.append(attributedActorTitle)
+        result.append(attributedActorList)
         
         /// Add paragraph style attribute
         result.addAttribute(.paragraphStyle, value: mutableParagraphStyle, range: NSRange(location: 0, length: result.length))
@@ -132,26 +135,8 @@ class MovieAdditionalInfoTextView: UITextView {
 
 //MARK: -Public methods
 extension MovieAdditionalInfoTextView {
-    public func changeState() {
-        print("MovieAdditionalInfoTextView => \(#function)")
-        
-        /// Inverse isExpanded property
-        isExpanded = !isExpanded
-        
-        /// Update ui
-        updateUI()
-    }
-    
     public func resetText(with text: String) {
         print("MovieAdditionalInfoTextView => \(#function)")
-        
-        /// Set collapsed text
-        collapsedText = String(text.prefix(characterLimitForCollapsedText))
-        collapsedText.append(" ... ")
-        
-        /// Set expanded text
-        expandedText = text
-        expandedText.append(" ")
         
         /// Update ui
         updateUI()

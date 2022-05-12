@@ -10,6 +10,7 @@ import UIKit
 class DetailedInfoView: UIView {
     
     private var descriptionTextView = DescriptionTextView()
+    private let movieAdditionalInfoView = MovieAdditionalInfoView()
     private var defaultDescriptionText = "Патрик Джейн - детектив и независимый консультант из Калифорнийского Бюро Расследований (КБР), он использует свои отточенные, как лезвие, навыки наблюдения для раскрытия тяжких преступлений. В самом Бюро Джейн известен за частые нарушения протокола, а также за его звездное прошлое: он работал медиумом, однако теперь сам признает, что симулировал паранормальные способности..."
     
     private func initialize() {
@@ -37,12 +38,20 @@ class DetailedInfoView: UIView {
     
     private func setupUI() {
         print("DetailedInfoView => \(#function)")
+        /// Description text view
         addSubview(descriptionTextView)
         descriptionTextView.snp.makeConstraints { (make) in
             make.trailing.leading.top.equalTo(self)
         }
         descriptionTextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textViewTapped(_:))))
         descriptionTextView.resetText(with: defaultDescriptionText)
+        
+        /// Movie additional info view (genres, country, lang, actors)
+        addSubview(movieAdditionalInfoView)
+        movieAdditionalInfoView.snp.makeConstraints { (make) in
+            make.top.equalTo(descriptionTextView.snp.bottom)
+            make.leading.trailing.bottom.equalTo(self)
+        }
     }
     
     @objc

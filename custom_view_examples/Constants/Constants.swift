@@ -33,6 +33,10 @@ struct ColorPalette {
         static let moreLessButtonBackground = #colorLiteral(red: 0.880512774, green: 0.9363065362, blue: 1, alpha: 1)
     }
     
+    struct Gray {
+        static let Light = #colorLiteral(red: 0.6273809671, green: 0.6274913549, blue: 0.6273739934, alpha: 1)
+    }
+    
     static let White = UIColor.white
     
     struct SkeletonColors {

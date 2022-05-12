@@ -23,6 +23,7 @@ class MovieAdditionalInfoView: UIView {
         super.init(frame: .zero)
         print("MovieAdditionalInfoView => \(#function)")
         initialize()
+        setupUI()
     }
     
     @available (*, unavailable)
