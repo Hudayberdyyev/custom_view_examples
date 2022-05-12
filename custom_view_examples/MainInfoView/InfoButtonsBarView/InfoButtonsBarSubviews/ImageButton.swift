@@ -11,14 +11,16 @@ class ImageButton: UIButton {
     private var customImage: UIImage!
     private var imageColor: UIColor!
     private var titleColor: UIColor!
-    private var heightConstraint: CGFloat!
+    private var imageHeightConstraint: CGFloat!
     
     //MARK: -Initializers
     private func initialize() {
         print("ImageButton => \(#function)")
         
         translatesAutoresizingMaskIntoConstraints = false
-        let resizedButtonImage = customImage.getImageSizeDependsOnMaxScreenDimension(multipliedBy: heightConstraint-0.005)
+        clipsToBounds = true
+        layer.cornerRadius = 7
+        let resizedButtonImage = customImage.getImageSizeDependsOnMaxScreenDimension(multipliedBy: imageHeightConstraint)
         
         
         setImage(resizedButtonImage, for: .normal)
@@ -54,7 +56,7 @@ class ImageButton: UIButton {
         self.imageColor = imageColor
         self.titleColor = titleColor
         self.backgroundColor = backgroundColor
-        self.heightConstraint = height
+        self.imageHeightConstraint = height
         
         initialize()
         

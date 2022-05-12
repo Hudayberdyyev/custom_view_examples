@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewController => \(#function)")
-        // Do any additional setup after loading the view.
+        
         view.backgroundColor = .orange
         setupUI()
     }
@@ -21,10 +21,12 @@ class ViewController: UIViewController {
     private func setupUI() {
         print("ViewController => \(#function)")
 //        let customView = ImageButton(image: UIImage(named: "play"), imageColor: .black, backgroundColor: .white, titleColor: .black, height: 0.046)
-        let customView = ImageButton(image: UIImage(named: "play"), imageColor: .black, backgroundColor: .white, titleColor: .black, height: 0.046)
+        let customView = InfoButtonsBarView()
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
-            make.edges.equalTo(view)
+            make.leading.trailing.equalTo(view)
+            make.height.equalTo(view).multipliedBy(0.046)
+            make.center.equalTo(view)
         }
     }
     
