@@ -48,8 +48,13 @@ class DropdownListView: UIView {
         return b
     }()
     
-    let transparentView = UIView()
-    let tableView = UITableView()
+    private let transparentView = UIView()
+    private let tableView: UITableView = {
+        let tv = UITableView()
+        tv.backgroundColor = .clear
+        tv.separatorStyle = UITableViewCell.SeparatorStyle.none
+        return tv
+    }()
     var dataSource = [String]()
     
     //MARK: -Initializers
@@ -62,7 +67,7 @@ class DropdownListView: UIView {
         /// Table view initial setup
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(DropdownTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     init() {
@@ -176,7 +181,9 @@ extension DropdownListView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? DropdownTableViewCell else {
+            return UITableViewCell()
+        }
         cell.textLabel?.text = dataSource[indexPath.row]
         return cell
     }
