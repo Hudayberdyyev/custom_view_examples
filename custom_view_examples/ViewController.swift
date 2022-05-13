@@ -12,21 +12,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewController => \(#function)")
+        print("\(#fileID) => \(#function)")
         
         view.backgroundColor = .orange
         setupUI()
     }
 
     private func setupUI() {
-        print("ViewController => \(#function)")
-//        let customView = ImageButton(image: UIImage(named: "play"), imageColor: .black, backgroundColor: .white, titleColor: .black, height: 0.046)
-        let customView = InfoButtonsBarView()
+        print("\(#fileID) => \(#function)")
+        let customView = InfoRecommendationView()
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(view)
-            make.height.equalTo(view).multipliedBy(0.046)
-            make.center.equalTo(view)
+            make.edges.equalTo(view)
         }
     }
     
