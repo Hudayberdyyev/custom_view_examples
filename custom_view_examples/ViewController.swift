@@ -20,12 +20,12 @@ class ViewController: UIViewController {
 
     private func setupUI() {
         print("\(#fileID) => \(#function)")
-        let customView = PlayButtonView()
+        let customView = EpisodeImageView()
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
             make.center.equalTo(view)
             make.height.equalTo(100)
-            make.width.equalTo(100)
+            make.width.equalTo(200)
         }
     }
     

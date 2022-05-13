@@ -26,7 +26,6 @@ class PlayButtonView: UIView {
         print("\(#fileID) => \(#function)")
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .systemBlue
-        setupCircleLayer()
     }
     
     init() {
@@ -54,6 +53,7 @@ class PlayButtonView: UIView {
             make.height.equalTo(self).multipliedBy(0.7)
             make.width.equalTo(self.snp.height).multipliedBy(0.7)
         }
+        setupCircleLayer()
     }
     
     private func setupCircleLayer() {
@@ -64,14 +64,14 @@ class PlayButtonView: UIView {
         circleLayer.fillColor = UIColor.black.withAlphaComponent(0.3).cgColor
         circleLayer.lineWidth = 3
         circleLayer.strokeColor = UIColor.white.cgColor
-//        layer.addSublayer(circleLayer)
+        layer.insertSublayer(circleLayer, below: playImageView.layer)
     }
     
     override func layoutSubviews() {
-        if bounds.width == prevBounds.width,
-           bounds.height == prevBounds.height {
-            return
-        }
+//        if bounds.width == prevBounds.width,
+//           bounds.height == prevBounds.height {
+//            return
+//        }
         circleLayer.removeFromSuperlayer()
         
         let path = UIBezierPath(ovalIn: bounds)
