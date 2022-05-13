@@ -10,14 +10,18 @@ import SnapKit
 
 class InfoRecommendationView: UIView {
     
+    private var cellWidthValue: CGFloat {
+        let screenWidth = UIScreen.main.bounds.width
+        return screenWidth / 2.2
+    }
+    
     //MARK: -UIControl
     lazy var recCollection:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.minimumLineSpacing = self.betweenSpace
         
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 3.0
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.delegate = self
@@ -82,7 +86,8 @@ extension InfoRecommendationView: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         print("\(#fileID) => \(#function)")
-        return CGSize(width: 50, height: 50)
+        let cellHeightValue = (940.0/600.0) * cellWidthValue
+        return CGSize(width: cellWidthValue, height: cellHeightValue)
     }
     
     
