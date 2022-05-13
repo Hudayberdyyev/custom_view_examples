@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     private func setupUI() {
         print("\(#fileID) => \(#function)")
-        let customView = InfoRecommendationView()
+        let customView = DropdownListView()
         view.addSubview(customView)
         customView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
