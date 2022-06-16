@@ -50,6 +50,7 @@
 		82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A378CE2823E0FD00ADB687 /* ViewController.swift */; };
 		82A378D42823E0FF00ADB687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82A378D32823E0FF00ADB687 /* Assets.xcassets */; };
 		82A378D72823E0FF00ADB687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82A378D52823E0FF00ADB687 /* LaunchScreen.storyboard */; };
+		82E7453E285B505400F1993D /* CollectionView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7453D285B505400F1993D /* CollectionView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		82A378D32823E0FF00ADB687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82A378D62823E0FF00ADB687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82A378D82823E0FF00ADB687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82E7453D285B505400F1993D /* CollectionView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView2.swift; sourceTree = "<group>"; };
 		C40171A6111587027ED9EAA2 /* Pods_custom_view_examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_custom_view_examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -301,6 +303,7 @@
 		82A378C92823E0FD00ADB687 /* custom_view_examples */ = {
 			isa = PBXGroup;
 			children = (
+				82E7453C285B503400F1993D /* CollectionView */,
 				8254A05228326355005F15D4 /* StatusBar */,
 				825414A0282E7416002520D6 /* DropdownListView */,
 				82541488282E4602002520D6 /* AdditionalInfoSubviews */,
@@ -316,6 +319,14 @@
 				82A378D82823E0FF00ADB687 /* Info.plist */,
 			);
 			path = custom_view_examples;
+			sourceTree = "<group>";
+		};
+		82E7453C285B503400F1993D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				82E7453D285B505400F1993D /* CollectionView2.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		CA655F7132A35FFDF027BB23 /* Pods */ = {
@@ -458,6 +469,7 @@
 				82649FBB2826A9F400600880 /* DetailedInfoView.swift in Sources */,
 				8254A0542832636C005F15D4 /* CustomViewWithStatusBar.swift in Sources */,
 				82A378CF2823E0FD00ADB687 /* ViewController.swift in Sources */,
+				82E7453E285B505400F1993D /* CollectionView2.swift in Sources */,
 				82541498282E4788002520D6 /* SpinnerView.swift in Sources */,
 				827906382825448B000BA6AA /* UIView+Preview.swift in Sources */,
 				8257775E282BD9AE001695B6 /* DescriptionTextView.swift in Sources */,
