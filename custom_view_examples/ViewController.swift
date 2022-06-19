@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     
     private func setupUI() {
         print("\(#fileID) => \(#function)")
-        let customView = CollectionView2()
+        let customView = CollectionViewWithHeader()
         view.addSubview(customView)
         
         customView.snp.makeConstraints { (make) in
