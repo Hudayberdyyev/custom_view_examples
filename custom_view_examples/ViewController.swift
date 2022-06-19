@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     
     private func setupUI() {
         print("\(#fileID) => \(#function)")
-        let customView = CustomViewWithStatusBar()
+        let customView = CollectionView2()
         view.addSubview(customView)
         
         customView.snp.makeConstraints { (make) in
